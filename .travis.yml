@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run michaelbabin/dckr yarn test --watchAll=false
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-2
+  app: react
+  env: React-env
+  bucket_name: elasticbeanstalk-us-west-2-688055245864
+  bucket_path: react
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
