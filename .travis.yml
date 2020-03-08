@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -f Dockerfile.dev -t michaelbabin/dckr .
+
+script:
+  - docker run michaelbabin/dckr yarn test -- --coverage
