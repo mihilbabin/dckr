@@ -11,10 +11,10 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: us-west-2
+  region: "us-west-2"
   app: react
-  env: React-env
-  bucket_name: elasticbeanstalk-us-west-2-688055245864
+  env: "React-env"
+  bucket_name: "elasticbeanstalk-us-west-2-688055245864"
   bucket_path: react
   on:
     branch: master
